@@ -8,6 +8,7 @@
     "downlevelIteration": true,
     "experimentalDecorators": true,
     "module": "esnext",
+    "allowJs":true,
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "es2015",
@@ -21,6 +22,8 @@
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
-    "strictInjectionParameters": true
+    "strictInjectionParameters": true,
+    "preserveWhitespaces": false,
+    "strictMetadataEmit" : true
   }
 }

@@ -1,11 +1,11 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnChanges } from '@angular/core';
 
 @Component({
   selector: 'app-cron-time-picker',
   templateUrl: './cron-time-picker.component.html',
   styleUrls: ['./cron-time-picker.component.scss']
 })
-export class CronTimePickerComponent implements OnInit {
+export class CronTimePickerComponent implements OnInit, OnChanges {
 
   @Output() onchange:EventEmitter<any> = new EventEmitter();
 
@@ -25,6 +25,10 @@ export class CronTimePickerComponent implements OnInit {
       this.minutes = this.range(0, 59);
       this.seconds = this.range(0, 59);
       this.hourTypes = ['AM', 'PM'];
+  }
+
+  public ngOnChanges() {
+console.log('model', this.model);
   }
 
   private range(start: number, end: number): number[] {
